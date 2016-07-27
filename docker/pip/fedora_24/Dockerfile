@@ -3,7 +3,7 @@ FROM fedora:24
 
 # Minimal package installation
 RUN dnf -y update &&\
-    dnf -y install python-pip git
+    dnf -y install python-pip
 
 # PyBOMBS setup
 WORKDIR /pybombs

@@ -4,7 +4,7 @@ FROM centos:7
 # Minimal package installation
 RUN rpm -iUvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch.rpm &&\
     yum -y update &&\
-    yum -y install python-pip git
+    yum -y install python-pip
 
 # PyBOMBS setup
 WORKDIR /pybombs

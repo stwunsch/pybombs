@@ -3,7 +3,7 @@ FROM ubuntu:14.04
 
 # Minimal package installation
 RUN apt-get update &&\
-    apt-get install -y python-pip git-core
+    apt-get install -y python-pip
 
 # PyBOMBS setup
 WORKDIR /pybombs
