@@ -8,7 +8,9 @@ RUN rpm -iUvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-7.noarch
 
 # PyBOMBS setup
 WORKDIR /pybombs
-RUN pip install PyBOMBS
+RUN git clone https://github.com/gnuradio/pybombs -b master &&\
+    cd pybombs &&\
+    python setup.py install
 RUN pybombs -v prefix init /pybombs
 RUN pybombs -v recipes add gr-recipes git+https://github.com/gnuradio/gr-recipes.git &&\
     pybombs -v recipes add gr-etcetera git+https://github.com/gnuradio/gr-etcetera.git
