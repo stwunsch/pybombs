@@ -1,10 +1,9 @@
 # Base image
-FROM centos:6
+FROM ubuntu:12.04
 
 # Minimal package installation
-RUN rpm -iUvh https://dl.fedoraproject.org/pub/epel/epel-release-latest-6.noarch.rpm &&\
-    yum -y update &&\
-    yum -y install python-pip
+RUN apt-get update &&\
+    apt-get install -y python-pip git-core
 
 # PyBOMBS setup
 WORKDIR /pybombs
